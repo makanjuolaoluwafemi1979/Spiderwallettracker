@@ -106,7 +106,7 @@ else:
 BOT_VERSION = "v3.2"
 START_TIME  = time.time()   # captured at module import — used for uptime / "Started At"
 
-THRESHOLD        = 6      # base wallet count threshold (adaptive adjusts ±1)
+THRESHOLD        = 5      # base wallet count threshold (adaptive adjusts ±1)
 WINDOW           = 180    # seconds — buy convergence window (2 minutes)
 ALERT_COOLDOWN   = 900    # seconds — suppress repeat buy alerts per token
 SELL_WINDOW      = 86400    # seconds — sell convergence window
