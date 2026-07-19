@@ -122,7 +122,7 @@ WEIGHTED_TRIGGER = 5.5    # total weighted score needed to fire alert
 MIN_LIQUIDITY = 50_000     # minimum liquidity needed to fire alert
 MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 1         # minimum number of elite wallets to fire alert
-MIN_AI_GRADE = "B+"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
+MIN_AI_GRADE = "C+"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
 MIN_GRADE_SCORE     = 65     # suppress buy alerts below this AI grade score (0-100)
 MIN_WALLET_QUALITY  = 55     # suppress if the "Wallet Quality" grade component (0-100) is below this
