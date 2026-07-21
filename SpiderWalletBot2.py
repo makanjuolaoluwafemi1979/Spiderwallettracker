@@ -125,7 +125,7 @@ MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert �
                                # this gate. Leave at 0 until your roster has actually earned
                                # some Elite-tier wallets (needs alert -> outcome -> promotion
                                # history to exist first) or every alert gets blocked forever.
-MIN_AI_GRADE = "C+"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
+MIN_AI_GRADE = "B-"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
 MIN_GRADE_SCORE     = 65     # suppress buy alerts below this AI grade score (0-100)
 MIN_WALLET_QUALITY  = 55     # suppress if the "Wallet Quality" grade component (0-100) is below this
