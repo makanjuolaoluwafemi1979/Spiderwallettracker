@@ -119,13 +119,13 @@ REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 # Wallet ranking weights
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
 WEIGHTED_TRIGGER = 4.5    # total weighted score needed to fire alert
-MIN_LIQUIDITY = 50_000     # minimum liquidity needed to fire alert
+MIN_LIQUIDITY = 5_000     # minimum liquidity needed to fire alert
 MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
                                # this gate. Leave at 0 until your roster has actually earned
                                # some Elite-tier wallets (needs alert -> outcome -> promotion
                                # history to exist first) or every alert gets blocked forever.
-MIN_AI_GRADE = "B-"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
+MIN_AI_GRADE = "C+"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
 MIN_GRADE_SCORE     = 55     # suppress buy alerts below this AI grade score (0-100)
 MIN_WALLET_QUALITY  = 45     # suppress if the "Wallet Quality" grade component (0-100) is below this
