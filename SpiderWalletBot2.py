@@ -107,18 +107,18 @@ BOT_VERSION = "v3.2"
 START_TIME  = time.time()   # captured at module import — used for uptime / "Started At"
 
 THRESHOLD        = 3      # base wallet count threshold — quiet/normal/active tiers: 2/3/4
-WINDOW           = 300    # seconds — buy convergence window (5 minutes)
+WINDOW           = 180    # seconds — buy convergence window (5 minutes)
 ALERT_COOLDOWN   = 600    # seconds — suppress repeat buy alerts per token
 SELL_WINDOW      = 86400    # seconds — sell convergence window
 MIN_HOLD_TIME    = 300    # seconds — minimum time after buy alert before sell alert fires
 FAST_DUMP_MIN_SELLERS = 1  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
-MIN_MCAP         = 30_000
+MIN_MCAP         = 0
 MAX_MCAP         = 5_000_000  # USD — skip tokens already above this market cap
 REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 
 # Wallet ranking weights
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
-WEIGHTED_TRIGGER = 5.5    # total weighted score needed to fire alert
+WEIGHTED_TRIGGER = 4.5    # total weighted score needed to fire alert
 MIN_LIQUIDITY = 50_000     # minimum liquidity needed to fire alert
 MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
