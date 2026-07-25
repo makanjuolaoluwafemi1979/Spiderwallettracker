@@ -106,8 +106,8 @@ else:
 BOT_VERSION = "v3.2"
 START_TIME  = time.time()   # captured at module import — used for uptime / "Started At"
 
-THRESHOLD        = 4      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
-EARLY_ALERT_MIN_WALLETS = 4   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
+THRESHOLD        = 3      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
+EARLY_ALERT_MIN_WALLETS = 3   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
                                # deliberately NOT tied to the adaptive threshold above, so a
                                # quiet-market dip to 3 doesn't also lower the bar for the fast
                                # alert. The graded BUY SIGNAL still uses the adaptive 3/4/5.
@@ -131,8 +131,8 @@ MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert �
                                # history to exist first) or every alert gets blocked forever.
 MIN_AI_GRADE = "C+"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
-MIN_GRADE_SCORE     = 60     # suppress buy alerts below this AI grade score (0-100)
-MIN_WALLET_QUALITY  = 50     # suppress if the "Wallet Quality" grade component (0-100) is below this
+MIN_GRADE_SCORE     = 55     # suppress buy alerts below this AI grade score (0-100)
+MIN_WALLET_QUALITY  = 45     # suppress if the "Wallet Quality" grade component (0-100) is below this
 
 # Wrapped SOL mint — excluded from token transfer detection
 WSOL_MINT = "So11111111111111111111111111111111111111112"
