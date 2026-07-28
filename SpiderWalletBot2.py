@@ -124,7 +124,7 @@ REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
 WEIGHTED_TRIGGER = 5.5    # total weighted score needed to fire alert
 MIN_LIQUIDITY = 15_000     # minimum liquidity needed to fire alert
-MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
+MIN_BUY_SOL = 3.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
                                # this gate. Leave at 0 until your roster has actually earned
                                # some Elite-tier wallets (needs alert -> outcome -> promotion
