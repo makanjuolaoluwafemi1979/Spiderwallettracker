@@ -106,24 +106,24 @@ else:
 BOT_VERSION = "v3.2"
 START_TIME  = time.time()   # captured at module import — used for uptime / "Started At"
 
-THRESHOLD        = 4      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
-EARLY_ALERT_MIN_WALLETS = 4   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
+THRESHOLD        = 3      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
+EARLY_ALERT_MIN_WALLETS = 3   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
                                # deliberately NOT tied to the adaptive threshold above, so a
                                # quiet-market dip to 3 doesn't also lower the bar for the fast
                                # alert. The graded BUY SIGNAL still uses the adaptive 3/4/5.
-WINDOW           = 300    # seconds — buy convergence window (5 minutes)
+WINDOW           = 180    # seconds — buy convergence window (5 minutes)
 ALERT_COOLDOWN   = 600    # seconds — suppress repeat buy alerts per token
 SELL_WINDOW      = 86400    # seconds — sell convergence window
-MIN_HOLD_TIME    = 600    # seconds — minimum time after buy alert before sell alert fires
-FAST_DUMP_MIN_SELLERS = 3  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
-MIN_MCAP         = 50_000
+MIN_HOLD_TIME    = 300    # seconds — minimum time after buy alert before sell alert fires
+FAST_DUMP_MIN_SELLERS = 1  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
+MIN_MCAP         = 20_000
 MAX_MCAP         = 5_000_000  # USD — skip tokens already above this market cap
 REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 
 # Wallet ranking weights
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
 WEIGHTED_TRIGGER = 5.5    # total weighted score needed to fire alert
-MIN_LIQUIDITY = 50_000     # minimum liquidity needed to fire alert
+MIN_LIQUIDITY = 15_000     # minimum liquidity needed to fire alert
 MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
                                # this gate. Leave at 0 until your roster has actually earned
@@ -149,45 +149,36 @@ IGNORED_MINTS = {
 
 FALLBACK_WALLETS = [
     "Bgokg3jutarxEMWQVospwUucSQfpG6Jw27jRbMxcvU2q",
-    "3KvsoNxgn64nsuHKPBHQJsguef3DgEkP2izE49k6CSAZ",
-    "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
-    "2QfBNK2WDwSLoUQRb1zAnp3KM12N9hQ8q6ApwUMnWW2T",
-    "gtagyESa99t49VmUqnnfsuowYnigSNKuYXdXWyXWNdd",
+    "AKDTWU4c8TsGf4QetwX12mf9YcYVQxsVS7w5kJ3JHEmH",
+    "6cNjLym8bDZ5JFGFSDom2us27iF7EBHYUXdFCdC5zWhX",
+    "HkFGQsW8mr8DTC2AE2WcC7MzwSnynfEryGMQSht271nf",
+    "5Us1iL3Rte6o8GMBTCwcBNUcXkovczQVEACScHwkqj41",
     "AQ3MK4mf4i4r3G9rkbAvfoxGP6eZ7yscuiy5Syyuq27U",
-    "GNoYNXQ66dnTqcR39nKi2QJSizjxvHHAy9GSbNszQuuq",
-    "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
-    "3xBmQQijfUghKXmnvjUKFEwrobxV2gmz2mYvFPoLoG4C",
-    "8NQ32SyFKD1d5kenq4oM8Da6C6J9TQSMW1uAgFRveEQr",
-    "pau23UpU2BFwF4JZrLxAnf4ZqgnD3xLnz6ESu7vPsao",
-    "75rvGkSYJyX3B3Yo2S1sR8xoVbjEmKXNrAutvyJho5qv",
-    "BVi5MqFtHhx8NScue7Mk8jMevyRwtmtc4JRHy4kxcmdT",
-    "BDvcocptCJV28qcQQ6inN9PcNTDjEbhvJVTKtY4RSRz8",
-    "9qKYscHeVzqVmgNL64fwS9VLp2X1uHoo4RBCCVZfvf3q",
-    "4mEvyvPG543JrH1MyrHzBMdZS13kwN4S6Np4YBapK6WR",
-    "EKA4XDZ6GPNgrme1XJzTXsfeTs2134MMHfL5BCn28JVk",
-    "ADtTiXFs1qp1ZzP59GEQkn6x7GJ16VNRfmC9VdD6fKaS",
-    "BqTEFMVeFh3d8Nv3AkZjqjLu33CbqoxXyFXsudsUAsmP",
-    "6vbg48QufjcGe3oQoF1Vt7cWr44MByciY2BMXNeWnCgf",
-    "CLNSZKwtirUSLFr4CoBC9e127xeYyxi1wbB2Gtpmkd1m",
-    "2eZ2th8V2Qv4p9faGdTygZ24hNLibUP8WoSEstZ7HcCX",
-    "2sEXVQbpCj95s1PHPThbo9Q8wtYhpwL3fGeABMo5sQTQ",
-    "4YP7YJFDpjJ9DePSH64ouj8cs52CZip7UfCbGBK98Nyg",
-    "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
-    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
-    "6qudAN2kV8mtCcYJxb5QQ6Vr15itdHHdeVbYm99NKMhy",
-    "imXwJGUFNdbGQWgAqiTqn6ME4KtdX5NYfusnxVgUE16",
-    "BrW7wSpBibDfs3rBVGVs3hjzHPV1QDHaJkK6o8KAByBD",
-    "B7vAAgPFkynbhxsAfpLcTHyTQHk3YHtV51uLaVdUFdUf",
-    "3CQtwiPJDucmbRNvHAkQWxuMyLwGR5rjDnUX3srbBSrk",
-    "9m2FBegLWp2PQJYXbX8SjqvEgPJdZrqcVSgNiMThEPPg",
-    "FP66QwH25B6xNznaLy4hVHU5DKVQrXzDVTnETY6UXXf8",
-    "2NAbaba6xkrYBo4mAkf9dKebzm5MxnexeENL1nKnazam",
-    "B6256fkHxEEh5yHh94rGQ7D8utvfDWedHnt4G6r8Zq7K",
-    "AVoLN2PjapF6tZJi7Sd97ChEYD63waeDoBTKf2kGYg3X",
-    "EgVjFS9isXJh6aqQaj5im4qDQBVN5kEzeMYXTN8z28Pc",
-    "FUhdhqtQmWQ1f3KXsC2q9MKuXVgAPGY9LGWahheBjFLT",
-    "EBDn8Jsw5kLc1HBak8Umq9qof4saSN1iSgSSfWNi8RY8",
-    "67xzjYWLG4j6ZJ8WsdW1tFQDwtp1T7BTrrR7zSxZcs23",
+    "CWqMrdgNH7LPJAy4ekQhtJSsbdiD3zsTNwWNgoSxPSQc",
+    "BTf4A2exGK9BCVDNzy65b9dUzXgMqB4weVkvTMFQsad",
+    "VJSDW6S74YXR4rRR9P4xwhMvLZJQMhrUb8XMFirUsy1",
+    "8FVQiWsHKFKBRyp9cdLJJy8byAAzcuH5zPWEsKTyUEG9",
+    "EEGSxkKsmLsaDrPPs9jjZ6X3KQBBRdfSGnUqvWv7erMn",
+    "CNudZYFgpbT26fidsiNrWfHeGTBMMeVWqruZXsEkcUPc",
+    "9vXjRRVfmw3cHJFrxirog5oEZrMg7CChs4Hst668wCUM",
+    "CzBNwCn8YhE6aRUYLA6W711CwNbUnX5gPQ3zbhxrFTwz",
+    "6S8GezkxYUfZy9JPtYnanbcZTMB87Wjt1qx3c6ELajKC",
+    "DTsb5JfBcFcws9EQqqvS9YJfzZNPnrSJUQHccWuPWYMS",
+    "GUjYXh4aR9tDJ1yU1gsa91LtivS5t84CZF3mP5SBkKhz",
+    "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+    "AJofLRzr9Hj6P86u2pQuxhLM12ZaMupRtxMDmyAJ18KN",
+    "AhaUXvK8umNG6oj9mbwuSqUAFqVTi5fFzHyqbBa8Y4b5",
+    "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
+    "6NzhmJy6wAB899TZRhiXd5yXtFdTkCmXRTMi9W1agQ8d",
+    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC",
+    "H9xneUEYQRXFLcRRdyXRLTiwf2per4T1P2PBPGwXhVu9",
+    "HT1bmCAJgxqjNmtgH5NVxT5JUTSqMJz2c3JM11yty1Gt",
+    "CnBpa7KqBstShhdMumLuRUTa1XKofas9pfTkPx5RfBZK",
+    "3VUNtVtjjx5ckUojT7UocJ5fbuAJRsNUXNfTBnPte9vC",
+    "FwhaiTn2hJySqE86wCru8VyZxBfUU5o88iH9Tqnc8ZLY",
+    "GgbCFRHHAPv5i1fqt1D1buf8FPNA31oKrkZvXDyZymsT",
+    "FxN3VZ4BosL5urG2yoeQ156JSdmavm9K5fdLxjkPmaMR",
+    "EJy5gCHqPJ1BP7oKZ8V4F3cDBLck71AU67PchuReEUCv",
 ]
 # ═══════════════════════════════════════════════════════════════════════════════
 #  INTERNALS
