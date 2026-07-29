@@ -106,12 +106,12 @@ else:
 BOT_VERSION = "v3.2"
 START_TIME  = time.time()   # captured at module import — used for uptime / "Started At"
 
-THRESHOLD        = 4      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
-EARLY_ALERT_MIN_WALLETS = 4   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
+THRESHOLD        = 3      # base wallet count threshold — quiet/normal/active tiers: 3/4/5
+EARLY_ALERT_MIN_WALLETS = 3   # fixed floor for the instant "EARLY BUY DETECTED" heads-up —
                                # deliberately NOT tied to the adaptive threshold above, so a
                                # quiet-market dip to 3 doesn't also lower the bar for the fast
                                # alert. The graded BUY SIGNAL still uses the adaptive 3/4/5.
-WINDOW           = 300    # seconds — buy convergence window (5 minutes)
+WINDOW           = 180    # seconds — buy convergence window (5 minutes)
 ALERT_COOLDOWN   = 600    # seconds — suppress repeat buy alerts per token
 SELL_WINDOW      = 86400    # seconds — sell convergence window
 BUY_CANCEL_DROP_PCT = 15  # cancel the graded BUY SIGNAL if price has dropped this much (%)
@@ -119,17 +119,17 @@ BUY_CANCEL_DROP_PCT = 15  # cancel the graded BUY SIGNAL if price has dropped th
                           # a signal that's already fading before it's even sent isn't
                           # worth alerting on. Also cancels if any of the converging
                           # wallets starts selling this same token during grading.
-MIN_HOLD_TIME    = 600    # seconds — minimum time after buy alert before sell alert fires
-FAST_DUMP_MIN_SELLERS = 3  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
-MIN_MCAP         = 50_000
+MIN_HOLD_TIME    = 300    # seconds — minimum time after buy alert before sell alert fires
+FAST_DUMP_MIN_SELLERS = 1  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
+MIN_MCAP         = 20_000
 MAX_MCAP         = 5_000_000  # USD — skip tokens already above this market cap
 REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 
 # Wallet ranking weights
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
-WEIGHTED_TRIGGER = 5.5    # total weighted score needed to fire alert
-MIN_LIQUIDITY = 50_000     # minimum liquidity needed to fire alert
-MIN_BUY_SOL = 1.0         # minimum buy amount in SOL
+WEIGHTED_TRIGGER = 5.0    # total weighted score needed to fire alert
+MIN_LIQUIDITY = 15_000     # minimum liquidity needed to fire alert
+MIN_BUY_SOL = 3.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
                                # this gate. Leave at 0 until your roster has actually earned
                                # some Elite-tier wallets (needs alert -> outcome -> promotion
