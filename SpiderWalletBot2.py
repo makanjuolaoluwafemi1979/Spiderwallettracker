@@ -121,7 +121,7 @@ BUY_CANCEL_DROP_PCT = 15  # cancel the graded BUY SIGNAL if price has dropped th
                           # wallets starts selling this same token during grading.
 MIN_HOLD_TIME    = 300    # seconds — minimum time after buy alert before sell alert fires
 FAST_DUMP_MIN_SELLERS = 1  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
-MIN_MCAP         = 30_000
+MIN_MCAP         = 20_000
 MAX_MCAP         = 5_000_000  # USD — skip tokens already above this market cap
 REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 
@@ -136,8 +136,8 @@ MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert �
                                # history to exist first) or every alert gets blocked forever.
 MIN_AI_GRADE = "B-"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
-MIN_GRADE_SCORE     = 65     # suppress buy alerts below this AI grade score (0-100)
-MIN_WALLET_QUALITY  = 55     # suppress if the "Wallet Quality" grade component (0-100) is below this
+MIN_GRADE_SCORE     = 60     # suppress buy alerts below this AI grade score (0-100)
+MIN_WALLET_QUALITY  = 50     # suppress if the "Wallet Quality" grade component (0-100) is below this
 
 # Wrapped SOL mint — excluded from token transfer detection
 WSOL_MINT = "So11111111111111111111111111111111111111112"
@@ -157,6 +157,7 @@ ELITE_WALLETS = [
     "8XNjCdTohpPo9MTvstYwXef36cpnBom5CC1wfQ8pAgfH",
     "DubKzJog5GTPPLWc2KiyA4A4tN9e1fAjy17npP7o1Kq",
     "4ZBNKbby2qkQgoL7jGuLPNjERKoX6wGSWpwSErFqz9Uh",
+    "BnXg9HVbMMZri8MtYj5vYt1iFCWEaQEQSnXCCwj88JRb",
 ]
 
 FALLBACK_WALLETS = ELITE_WALLETS + [
@@ -186,6 +187,7 @@ FALLBACK_WALLETS = ELITE_WALLETS + [
     "EXpDc1N1rrijHjFTPxJAcVr556umZ9CEG6wWERfJEvn8",
     "3v1jNAQaFbUPZivSqbLKFmpDSfe4eCHdroNqmfPmi1fA",
     "6cNjLym8bDZ5JFGFSDom2us27iF7EBHYUXdFCdC5zWhX",
+    "2o9UsXTRWZTfPt2mgTpUM5NcTCMKHsgox4nFdwTVdfks",
 ]
 # ═══════════════════════════════════════════════════════════════════════════════
 #  INTERNALS
