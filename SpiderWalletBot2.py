@@ -154,11 +154,12 @@ IGNORED_MINTS = {
 
 ELITE_WALLETS = [
     "FwhaiTn2hJySqE86wCru8VyZxBfUU5o88iH9Tqnc8ZLY",
-    "8XNjCdTohpPo9MTvstYwXef36cpnBom5CC1wfQ8pAgfH",
+    "75qsE3p5y2BFSLnfS9MUMqSAwq6MW5FhTavrUPMTFkKz",
     "DubKzJog5GTPPLWc2KiyA4A4tN9e1fAjy17npP7o1Kq",
     "4ZBNKbby2qkQgoL7jGuLPNjERKoX6wGSWpwSErFqz9Uh",
     "BnXg9HVbMMZri8MtYj5vYt1iFCWEaQEQSnXCCwj88JRb",
     "GNoYNXQ66dnTqcR39nKi2QJSizjxvHHAy9GSbNszQuuq",
+    "Bgokg3jutarxEMWQVospwUucSQfpG6Jw27jRbMxcvU2q",
 ]
 
 FALLBACK_WALLETS = ELITE_WALLETS + [
@@ -189,6 +190,7 @@ FALLBACK_WALLETS = ELITE_WALLETS + [
     "3v1jNAQaFbUPZivSqbLKFmpDSfe4eCHdroNqmfPmi1fA",
     "6cNjLym8bDZ5JFGFSDom2us27iF7EBHYUXdFCdC5zWhX",
     "2o9UsXTRWZTfPt2mgTpUM5NcTCMKHsgox4nFdwTVdfks",
+    "8XNjCdTohpPo9MTvstYwXef36cpnBom5CC1wfQ8pAgfH",
 ]
 # ═══════════════════════════════════════════════════════════════════════════════
 #  INTERNALS
