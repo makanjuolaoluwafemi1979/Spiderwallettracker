@@ -192,7 +192,6 @@ FALLBACK_WALLETS = ELITE_WALLETS + [
     "2o9UsXTRWZTfPt2mgTpUM5NcTCMKHsgox4nFdwTVdfks",
     "8XNjCdTohpPo9MTvstYwXef36cpnBom5CC1wfQ8pAgfH",
 ]
-]
 # ═══════════════════════════════════════════════════════════════════════════════
 #  INTERNALS
 # ═══════════════════════════════════════════════════════════════════════════════
