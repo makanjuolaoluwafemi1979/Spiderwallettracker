@@ -132,7 +132,7 @@ REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 MIN_VOLUME          = int(os.environ.get("MIN_VOLUME",          "10000"))     # USD value in the last tracking window
 MIN_AGE_SECONDS     = int(os.environ.get("MIN_AGE_SECONDS",     "0"))        # wait at least 1 minute post-creation
 MAX_AGE_SECONDS     = int(os.environ.get("MAX_AGE_SECONDS",     "1200"))      # ignore tokens older than 20 minutes
-MIN_HOLDERS         = int(os.environ.get("MIN_HOLDERS",         "40"))        # minimum unique holder count
+MIN_HOLDERS         = int(os.environ.get("MIN_HOLDERS",         "15"))        # minimum unique holder count
 REQUIRE_RENOUNCED   = os.environ.get("REQUIRE_RENOUNCED",       "false").strip().lower() in ("1", "true", "yes", "on")
 MIN_LIQUIDITY_RATIO = float(os.environ.get("MIN_LIQUIDITY_RATIO", "0.20"))    # liquidity >= 20% of market cap
 
