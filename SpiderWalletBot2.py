@@ -121,7 +121,7 @@ BUY_CANCEL_DROP_PCT = 15  # cancel the graded BUY SIGNAL if price has dropped th
                           # wallets starts selling this same token during grading.
 MIN_HOLD_TIME    = 300    # seconds — minimum time after buy alert before sell alert fires
 FAST_DUMP_MIN_SELLERS = 1  # if this many original buy wallets sell together, alert bypasses MIN_HOLD_TIME
-MIN_MCAP         = 15_000
+MIN_MCAP         = 10_000
 MAX_MCAP         = 2_000_000  # USD — skip tokens already above this market cap
 REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 
@@ -132,14 +132,14 @@ REFRESH_HOURS    = 720    # 30 days — one webhook registration per month
 MIN_VOLUME          = int(os.environ.get("MIN_VOLUME",          "5000"))     # USD value in the last tracking window
 MIN_AGE_SECONDS     = int(os.environ.get("MIN_AGE_SECONDS",     "0"))        # wait at least 1 minute post-creation
 MAX_AGE_SECONDS     = int(os.environ.get("MAX_AGE_SECONDS",     "432000"))      # ignore tokens older than 7200 minutes
-MIN_HOLDERS         = int(os.environ.get("MIN_HOLDERS",         "15"))        # minimum unique holder count
+MIN_HOLDERS         = int(os.environ.get("MIN_HOLDERS",         "3"))        # minimum unique holder count
 REQUIRE_RENOUNCED   = os.environ.get("REQUIRE_RENOUNCED",       "false").strip().lower() in ("1", "true", "yes", "on")
 MIN_LIQUIDITY_RATIO = float(os.environ.get("MIN_LIQUIDITY_RATIO", "0.20"))    # liquidity >= 20% of market cap
 
 # Wallet ranking weights
 MIN_WALLET_SCORE = 0.6    # wallets below this score are ignored in weighted sum
 WEIGHTED_TRIGGER = 5.0    # total weighted score needed to fire alert
-MIN_LIQUIDITY = 10_000     # minimum liquidity needed to fire alert
+MIN_LIQUIDITY = 5_000     # minimum liquidity needed to fire alert
 MIN_BUY_SOL = 3.0         # minimum buy amount in SOL
 MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert — 0 disables
                                # this gate. Leave at 0 until your roster has actually earned
