@@ -147,7 +147,7 @@ MIN_ELITE_WALLETS = 0         # minimum number of elite wallets to fire alert �
                                # history to exist first) or every alert gets blocked forever.
 MIN_AI_GRADE = "C"          # minimum AI grade to fire alert (A+ > A > B > C > D) — informational,
                               # MIN_GRADE_SCORE below is the numeric gate actually enforced
-MIN_GRADE_SCORE     = 55     # suppress buy alerts below this AI grade score (0-100)
+MIN_GRADE_SCORE     = 50     # suppress buy alerts below this AI grade score (0-100)
 MIN_WALLET_QUALITY  = 45     # suppress if the "Wallet Quality" grade component (0-100) is below this
 
 # Wrapped SOL mint — excluded from token transfer detection
